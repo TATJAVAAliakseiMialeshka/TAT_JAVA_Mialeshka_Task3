@@ -1,4 +1,4 @@
-package com.epam.ta.library.controller.singlecommand;
+package com.epam.ta.library.server.singlecommand;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

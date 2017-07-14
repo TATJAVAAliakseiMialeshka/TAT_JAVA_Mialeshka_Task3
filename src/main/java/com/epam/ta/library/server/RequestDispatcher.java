@@ -1,4 +1,4 @@
-package com.epam.ta.library.view;
+package com.epam.ta.library.server;
 
 import java.util.ArrayList;
 import java.util.List;

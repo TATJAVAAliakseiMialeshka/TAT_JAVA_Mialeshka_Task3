@@ -1,4 +1,4 @@
-package com.epam.ta.library.controller.scenario;
+package com.epam.ta.library.server.scenario;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,9 +9,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.epam.ta.library.controller.command.CommandName;
-import com.epam.ta.library.controller.singlecommand.MultithreadServerTestActivateUser;
-import com.epam.ta.library.controller.singlecommand.MultithreadServerTestUtil;
-import com.epam.ta.library.view.MultithreadServer;
+import com.epam.ta.library.server.MultithreadServer;
+import com.epam.ta.library.server.singlecommand.MultithreadServerTestActivateUser;
+import com.epam.ta.library.server.singlecommand.MultithreadServerTestUtil;
 
 /**
  * MultithreadServerScenario class 

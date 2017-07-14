@@ -4,8 +4,8 @@ import org.apache.log4j.Logger;
 
 import com.epam.ta.library.controller.command.Command;
 import com.epam.ta.library.controller.command.CommandProvider;
+import com.epam.ta.library.server.ParamExtractor;
 import com.epam.ta.library.service.util.ServiceUtil;
-import com.epam.ta.library.view.ParamExtractor;
 
 public class Controller {
 

@@ -1,4 +1,4 @@
-package com.epam.ta.library.controller.scenario;
+package com.epam.ta.library.server.scenario;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,21 +9,20 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.epam.ta.library.controller.command.CommandName;
-import com.epam.ta.library.controller.singlecommand.MultithreadServerTestActivateUser;
-import com.epam.ta.library.controller.singlecommand.MultithreadServerTestUtil;
-import com.epam.ta.library.view.MultithreadServer;
+import com.epam.ta.library.server.MultithreadServer;
+import com.epam.ta.library.server.singlecommand.MultithreadServerTestActivateUser;
+import com.epam.ta.library.server.singlecommand.MultithreadServerTestUtil;
 
 /**
  * MultithreadServerScenario class 
  * Test scenario: 
  * 1. login as admin
- * 2. add book description
- * 3. edit another book description
- * 4. disable another book
+ * 2. activate one user
+ * 3. ban another user 
  * 5. sign out
  */
 
-public class MultithreadServerAdminScenario2 {
+public class MultithreadServerAdminScenario1 {
 
 	private MultithreadServer server;
 
@@ -34,9 +33,8 @@ public class MultithreadServerAdminScenario2 {
 
 	private final List<String> adminCommandsExpRes = Arrays.asList(
 			"Welcome",
-			"Book description successfully added.",
-			"Book description successfully updated.",
-			"Book successfully disabled for ordering.",
+			"User successfully activated.",
+			"User successfully banned.",
 			"Sign out success.");
 	
 	@DataProvider
@@ -44,9 +42,8 @@ public class MultithreadServerAdminScenario2 {
 
 		List<String> adminCommandsList = Arrays.asList(
 				CommandName.AUTHORIZATION.name() + "='admin1' 'admin1'",
-				CommandName.ADD_BOOK_DESCRIPTION.name() +"='b_name' '9999' 'b_descr' '100'",
-				CommandName.EDIT_BOOK_INFO.name() + "='22' 'b_name' '9999' 'b_descr' '0'",
-				CommandName.DISABLE_BOOK.name() + "='1'",
+				CommandName.ACTIVATE_USER.name() + "='5'",
+				CommandName.BAN_USER.name() + "='4'",
 				CommandName.SIGN_OUT.name()
 				);
 		return new Object[][] { { adminCommandsList, adminCommandsExpRes }, };
@@ -57,9 +54,8 @@ public class MultithreadServerAdminScenario2 {
 
 		List<String> adminCommandsList = Arrays.asList(
 				CommandName.AUTHORIZATION.name() + "='admin1' 'admin1'",
-				CommandName.ADD_BOOK_DESCRIPTION.name() +"='b_name' '9999' 'b_descr' '100'",
-				CommandName.EDIT_BOOK_INFO.name() + "='21' 'b_name' '9999' 'b_descr' '0'",
-				CommandName.DISABLE_BOOK.name() + "='1'",
+				CommandName.ACTIVATE_USER.name() + "='6'",
+				CommandName.BAN_USER.name() + "='7'",
 				CommandName.SIGN_OUT.name()
 				);
 		return new Object[][] { { adminCommandsList, adminCommandsExpRes }, };
@@ -94,4 +90,3 @@ public class MultithreadServerAdminScenario2 {
 	}
 
 }
-

@@ -1,11 +1,11 @@
-package com.epam.ta.library.controller.singlecommand;
+package com.epam.ta.library.server.singlecommand;
 
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.epam.ta.library.view.MultithreadServer;
+import com.epam.ta.library.server.MultithreadServer;
 
 public class MultithreadServerNullTest {
 
