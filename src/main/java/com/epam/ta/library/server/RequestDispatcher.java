@@ -2,11 +2,10 @@ package com.epam.ta.library.server;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 import com.epam.ta.library.controller.Controller;
 
-public class RequestDispatcher implements Callable<List<String>> {
+public class RequestDispatcher implements Runnable {
 
 	private String [] userCommands;
 
@@ -25,9 +24,8 @@ public class RequestDispatcher implements Callable<List<String>> {
 		this.userCommands = userCommandMap;
 	}
 
-
 	@Override
-	public List<String> call() throws Exception {
+	public void run() {
 		controller = Controller.getInstance();
 		if (null != userCommands) {
 			for (String userCommand : userCommands) {
@@ -37,7 +35,7 @@ public class RequestDispatcher implements Callable<List<String>> {
 		} else {
 			responceList.add(WRONG_ARG_FORMAT);
 		}
-		return responceList;
+
 	}
 
 }
